@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+namespace sql 문법에 대한 그룹명
+id값은 중복되면 안됨 <select><insert><update><delete>
+${} : 필드명,테이블
+#{} : 값
+ -->
+
+<mapper namespace="adminDB">
+
+
+<!-- setup -->
+<update id="sbupdate">
+update  shopsetup set sb1 = '${sb1}', sb2 = '${sb2}',sb3='${sb3}',sb4='${sb4}',sbl1='${sbl1}',sbl2='${sbl2}',sbl3='${sbl3}',sbl4='${sbl4}'
+</update>
+
+<update id="spupdate">
+update  shopsetup set sp1='${sp1}' ,spl1='${spl1}'
+</update>
+
+<update id="sadupdate">
+update  shopsetup set sad1='${sad1}',sadl1='${sadl1}',sad2='${sad2}' ,sadl2='${sadl2}'
+</update>
+
+<select id="setupall"  resultType="Adminvo">
+	select * from shopsetup
+</select>
+
+
+<select id="selectid" parameterType="string" resultType="Adminvo">
+	select * from admin where aid=#{value}
+</select>
+
+<select id="selectall" resultType="Adminvo">
+select * from admin where accept='N' order by aidx desc
+</select>
+
+<select id="idck" resultType="hashmap">
+select aid from admin
+</select>
+
+
+
+<insert id="admininsert">
+insert into admin (aidx,aname,aid,apw,atel,aemail,adpt,apst,accept,adate)
+values ('0',#{aname},#{aid},#{apw},#{atel},#{aemail},#{adpt},#{apst},default,default)
+</insert>
+
+
+<update id="adminupdate">
+update admin set accept='Y' where aidx=#{value}
+</update>
+
+
+<!-- member파트 -->
+<insert id="joinmember">
+insert into member values('0',#{mid},#{mname},#{mpass},#{maccept},#{memail},#{maddr},#{mtel},#{mphone},#{mlevel},#{mpoint},#{memailok},#{msmsok},default,default,default,#{mdormant})
+</insert>
+
+<select id="selectmember" resultType="Adminvo">
+select * from member order by midx desc limit #{s},5
+</select>
+
+<select id="membersearch" resultType="Adminvo">
+select * from member where ${searchm} like '%${memberinfo}%' order by midx desc limit #{s},5
+</select>
+
+
+<select id="member_count" resultType="int">
+select count(*) from member
+</select>
+
+<update id="member_modify" >
+update member set mpoint=#{mpoint},mlevel=#{mlevel},mdormant=#{mdormant} where mid=#{mid}
+</update>
+
+<select id="search_count" resultType="int">
+select count(*) from member where ${searchm} like '%${memberinfo}%'
+</select>
+
+<delete id="memberd" >
+ DELETE from member WHERE midx IN (
+        <foreach collection="cks" item="cks" separator=",">
+        #{cks}
+        </foreach>
+        )
+</delete>
+
+
+<!-- 공지사항파트 -->
+<select id="selectnotice" resultType="Adminvo">
+select * from admin_notice order by nidx desc limit #{s},10
+</select>
+
+<select id="noticeinfo" resultType="Adminvo">
+select * from admin_notice where nidx=#{ninfo}
+</select>
+
+<delete id="noticedel">
+ DELETE from admin_notice WHERE nidx IN (
+        <foreach collection="cks" item="cks" separator=",">
+        #{cks}
+        </foreach>
+        )
+</delete>
+
+<delete id="noticedelone">
+ DELETE from admin_notice WHERE nidx=#{nidx}
+ </delete>
+
+
+<insert id="noticeinsert">
+insert into admin_notice values('0',#{nsub1},#{nwriter1},#{nfile1},#{ntext1},default,default);
+</insert>
+
+<select id="notice_count" resultType="int">
+select count(*) from admin_notice
+</select>
+
+<update id="countupdate">
+update admin_notice set count=#{ncount} where nidx=#{ninfo}
+</update>
+
+
+<select id="noticesub" resultType="hashmap">
+select nsub,DATE_FORMAT(ndate,'%Y-%m-%d') as ndate from admin_notice order by nidx desc limit 0,5
+</select>
+
+<update id="noticemdf">
+update admin_notice set nsub=#{nsub1},ntext=#{ntext1},nfile=#{nfile1} where nidx=#{nidx}
+</update>
+
+
+
+
+<insert id="insertpd" >
+insert into productlist values('0','${pcg1}','${pcg2}','${pcode}','${pname}','${pinfo}','${pprice}','${pdc}','${pdcprice}','${pea}','${psell}','${psoldout}','${pimg1.get(0)}','${pimg1.get(1)}','${pimg1.get(2)}','${pinfo2}')
+</insert>
+
+<select id="selectpd" resultType="adminvo">
+select * from productlist order by pidx desc limit #{s},10
+</select>
+
+<delete id="productd">
+ DELETE from productlist WHERE pidx IN (
+        <foreach collection="cks" item="cks" separator=",">
+        #{cks}
+        </foreach>
+        )
+</delete>
+
+
+<select id="productlist" resultType="hashmap">
+select pimg,pname,pinfo,pprice,pdc,pdcprice from productlist  order by pidx desc limit 0,9
+</select>
+
+
+<select id="pd_count" resultType="int">
+select count(*) from productlist
+</select>
+
+<select id="productsearch" resultType="Adminvo">
+select * from productlist where ${searchp} like '%${productinfo}%' order by pidx desc limit #{s},9
+</select>
+<select id="psearch_count" resultType="int">
+select count(*) from productlist where ${searchp} like '%${productinfo}%'
+</select>
+
+
+
+<select id="mdpicklist" resultType="hashmap">
+select pimg,pname,pinfo,pprice,pdc,pdcprice from productlist where pcg1='이주의 핫딜' order by pidx desc limit 0,9
+</select>
+
+
+
+<select id="bestshoplogin" resultType="string">
+select mid from member where mid=#{mid} and mpass=#{mpass}
+</select>
+
+<select id="codelist" resultType="hashmap">
+select pcode from productlist
+</select>
+
+
+<update id="shopconfig" >
+update shopconfig set
+ctitle='${ctitle}',cadminmail='${cadminmail}',cpointok='${cpointok}',cpoint='${cpoint}',clevel='${clevel}',
+ccompname='${ccompname}',cbiznum='${cbiznum}',cceo='${cceo}',
+cgen='${cgen}',ccomnum='${ccomnum}',ccombiznum='${ccombiznum}',caddr='${caddr}',ccomadmin='${ccomadmin}',
+ccomadminmail='${ccomadminmail}',cnobank='${cnobank}',cbank='${cbank}',
+ccredit='${ccredit}',ctelpay='${ctelpay}',cgift='${cgift}',cbill='${cbill}',cdelivery='${cdelivery}',
+cdprice='${cdprice}',cdelivery_day='${cdelivery_day}' 
+</update>
+
+<select id="selectconfig" resultType="adminvo">
+select * from shopconfig
+</select>
+
+<select id="configapi"  resultType="hashmap">
+select ctitle,cceo,cnobank,cbank,ccomadmin,ccomadminmail,ccomnum,cbiznum,caddr,cgen from shopconfig
+</select>
+
+<select id="bannerapi"  resultType="hashmap">
+select * from shopsetup 
+</select>
+
+
+</mapper>
+

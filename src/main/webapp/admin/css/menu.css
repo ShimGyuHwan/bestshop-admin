@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.s{
+	width:100%;
+	height:70px;
+	background-color:#333333;
+	
+}
+
+.sul{
+	margin:0 auto;
+	width:1100px; height:inherit;
+	background-color:#333333;
+	display:flex;
+	justify-content: flex-start;
+	
+	
+}
+
+.sul>li{
+	width:155px;
+	height:70px;
+	text-align:center;
+	line-height:70px;
+	color:#cccccc;
+	font-size:13px;
+	cursor:pointer;
+	
+}
+
+.sul>li:hover{
+	color:yellow;
+}

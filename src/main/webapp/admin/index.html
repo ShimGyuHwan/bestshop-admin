@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>portfolio</title>
+<link rel="stylesheet" type="text/css" href="./css/default.css?v=1">
+<link rel="stylesheet" type="text/css" href="./css/admin.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="logo"><img src="./img/logo.png"><label>ADMINISTRATOR</label></div>
+<form id="admin">
+<section>
+<ul class="ulcss">
+<li>
+<ol class="login"><li><input type="text" name="aid" placeholder="관리자 아이디를 입력하세요"></li><li><input type="password" name="apw" placeholder="관리자 패스워드를 입력하세요"></li></ol>
+<span onclick="login()">MASTER LOGIN</span>
+</li>
+<li>※본 사이트는 관리자 외에는 접근을 금합니다.페이지 접근에 대한 접속 정보는 모두 기록 됩니다.</li>
+<li><div onclick="page(1)">신규 관리자 등록요청</div><div onclick="page(2)">아이디/패스워드 찾기</div></li>
+</ul>
+</section>
+</form>
+</body>
+<script src="./js/admin.js?v=1"></script>
+</html>

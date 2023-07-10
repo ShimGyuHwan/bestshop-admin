@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noticeDB">
+
+<select id="selectnotice" resultType="Adminvo">
+select * from admin_notice order by nidx desc limit #{s},10
+</select>
+
+<select id="noticeinfo" resultType="Adminvo">
+select * from admin_notice where nidx=#{ninfo}
+</select>
+
+<delete id="noticedel">
+delete from admin_notice where nidx =#{del_nidx}
+</delete>
+
+<insert id="noticeinsert">
+insert into admin_notice values('0',#{nsub1},#{nwriter1},#{nfile1},#{ntext1},default,default);
+</insert>
+
+<select id="notice_count" resultType="int">
+select count(*) from admin_notice
+</select>
+
+<update id="countupdate">
+update admin_notice set count=#{ncount} where nidx=#{ninfo}
+</update>
+
+</mapper>

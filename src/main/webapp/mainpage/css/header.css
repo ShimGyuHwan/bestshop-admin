@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+.top_ad{
+    width:100%;
+    height:70px;
+    position: absolute;
+    background-color: #ed4747;
+    transition: all 70s ease ;
+
+}
+.top_ad>div{
+    width:1100px;
+    margin:0 auto;
+    height:70px;
+    background-image: url("./ico/top_ad.png");
+    position: relative;
+    transition: all 2s ease;
+}
+.top_ad>div>span{
+    width:25px;
+    height:25px;
+    text-align: center;
+    line-height: 25px;
+    background-color: #000000;
+    color:white;
+    position: absolute;
+    right:0;
+    margin-right:10px;
+    margin-top:22px;
+    cursor: pointer;
+}
+.top_ulcss{
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0 auto;
+    width:1100px;
+    height:inherit;
+}
+.top_ulcss>li:nth-child(1){
+    height:70px;
+   
+    position: relative;
+    transition: all 2s ease;
+}
+.top_ulcss>li:nth-child(1)>span{
+    width:25px;
+    height:25px;
+    text-align: center;
+    line-height: 25px;
+    background-color: #000000;
+    color:white;
+    position: absolute;
+    right:0;
+    margin-right:10px;
+    margin-top:22px;
+    cursor: pointer;
+}
+
+.top_ulcss>li:nth-child(2){
+        display: flex;
+        justify-content: space-between;
+        height:40px;
+
+}
+.top_ulcss>li:nth-child(3){
+
+    height:110px;
+    
+}
+.top_middle{
+    list-style: none;
+    
+    display: inline;
+    height:inherit;
+
+  
+
+    right:0;
+
+}
+.top_ulcss>li:nth-child(2)>span{
+    width:450px;
+    line-height: 40px;
+}
+
+.top_middle>li{
+    display:inline-block;
+    height:inherit;
+    line-height: 40px;
+    padding:0 20px 0 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+
+.top_middle>li:nth-child(4){
+    color:red;
+}
+.top_middle>li::after{
+    content: "|";
+    position:absolute;
+    right:0;
+
+}
+.top_middle>li:last-child::after{
+    content: "";
+}
+.basket_font{
+    color:red;
+}
+
+
+.top_ulcss>li:nth-child(3){
+    display:flex;
+    justify-content: space-between;
+}
+.top_ulcss>li:nth-child(3)>div:nth-child(1){
+
+    width:330px;
+    height:110px;
+
+}
+.top_ulcss>li:nth-child(3)>div:nth-child(1)>span{
+    width:203px;
+    height:50px;
+    background-image: url("/mainpage/ico/logo.gif");
+    object-fit: fill;
+    background-repeat: no-repeat;
+    margin-top:20px;
+    cursor:pointer;
+}
+.top_ulcss>li:nth-child(3)>div:nth-child(2){
+
+    width:340px;
+    height:110px;
+    display: flex;
+    justify-content: center;
+    line-height: 110px;
+}
+.top_ulcss>li:nth-child(3)>div:nth-child(2)>input{
+    width:270px;
+    height:40px;
+    box-sizing: border-box;
+    margin-top:35px;
+    border:0;
+    border-bottom:3px solid red;
+    outline:none;
+}
+.top_ulcss>li:nth-child(3)>div:nth-child(2)>button{
+    width:30px;
+    height:35px;
+ 
+    margin-top:40px;
+    background-image: url("mainpage/ico/top_btn_search.gif");
+    object-fit: contain;
+    background-repeat: no-repeat;
+ 	border-bottom:3px solid red;   
+    
+   
+}
+
+.top_ulcss>li:nth-child(3)>div:nth-child(3){
+
+    width:330px;
+    height:110px;
+}
+.top_ulcss>li:nth-child(3)>div:nth-child(3)>span{
+    width:265px;
+    height:55px;
+    margin-top:26px;
+    margin-left:65px;
+    background-image: url('./ico/coupon.jpg');
+    cursor: pointer;
+}

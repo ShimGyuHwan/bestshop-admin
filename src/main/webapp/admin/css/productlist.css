@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+.productbtn{
+	
+	display:flex;
+	justify-content: space-between;
+}
+.productbtn>span:nth-child(2) {
+	background-color: rgb(250, 53, 36);
+}
+
+.pinfo>img{
+	
+	width:40px;
+	height:40px;
+	object-fit:contain;
+	margin-top:5px;
+}
+.lol2{
+	height:60px;
+}
+.lol2 >li{
+	height:60px;
+	line-height: 60px;
+}
+
+
+.lol2 >li:nth-child(1) {
+	width:40px;
+}
+
+.lol2 >li:nth-child(2) {
+	width:60px;
+}
+.lol2 >li:nth-child(3) {
+	width:60px;
+}
+.lol2 >li:nth-child(4) {
+	width:350px;
+}
+
+.lol2 >li:nth-child(8){
+	
+	width:50px;
+}
+.lol2 >li:nth-child(9){
+	
+	width:50px;
+}
+.lol2 >li:nth-child(10){
+	
+	width:50px;
+}
+
+.lol2 >li:nth-child(11){
+	width:70px;
+	text-align: center;
+}
+
+
+.pdol>li{
+	font-size:11px;
+}
+
+.pdol >li:nth-child(1) {
+	width:40px;
+}
+
+.pdol >li:nth-child(2) {
+	width:60px;
+}
+.pdol >li:nth-child(3) {
+	width:60px;
+}
+.pdol >li:nth-child(4) {
+	width:350px;
+}
+
+.pdol >li:nth-child(8){
+	
+	width:50px;
+}
+.pdol >li:nth-child(9){
+	
+	width:50px;
+}
+.pdol >li:nth-child(10){
+	
+	width:50px;
+	font-size:9px;
+}
+
+
+.pdol >li:nth-child(11){
+	
+	width:70px;
+
+}
+.lol2>li:nth-child(11)>span{
+	width:50px;
+	height:30px;
+	background-color: black;
+	color:white;
+	text-align: center;
+	line-height: 30px;
+	cursor:pointer;
+	margin-top:10px;
+	margin-left:11px;
+	box-sizing: border-box;
+}

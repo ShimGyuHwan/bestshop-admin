@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* 디폴트 */
+*{margin:0;padding:0}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:14px;
+}
+h1,h2,h3,h4,h5,h6,form,fieldset{
+	margin:0;padding:0;border:0;
+}
+
+button{
+	cursor:pointer;
+	border:0;
+}
+
+input[type=button], input[type=submit], input[type=reset]{
+	cursor:pointer;
+	border:0;
+}
+ul,ol,dl{margin:0; padding:0;list-style:none;}
+select{margin:0;}
+a:link,a:visited,a:hover,a:focus,a:active{
+	color:#000;text-decoration:none;
+}
+p{margin:0;padding:0; word-break:break-all;}
+
+span,label{
+	display:block;
+}
+
+.clear{
+	clear:both;
+}
+/* 디폴트 끝*/
+
+.top_css{
+  
+    height:220px;
+    
+    position:relative;
+}
+.menu_css{
+
+    height:50px;
+    border-bottom: 1px solid black;
+  
+}
+.banner_css{
+    height:450px;
+
+    margin-bottom:30px;    
+}
+.nproduct_css{
+  margin-bottom: 30px;
+}
+.ad1_css{
+    height:250px;
+    margin-bottom: 30px;
+   
+}
+
+.adct{
+	margin:0 auto;
+	width:1100px;
+}
+.mdpick_css{
+    
+    height:400px;
+    margin-bottom: 30px;
+
+}
+
+.nt_css{
+    
+   height:300px;
+   margin-bottom: 30px;
+ 
+}
+.nt2_css{
+    margin:0 auto;
+    width:1100px;
+    height:inherit;
+    border:1px solid #333;
+    display:flex;
+    box-sizing: border-box;
+}
+.notice_css{
+    width:500px;
+    height:300px;
+    margin:25px;
+    margin-top:0;
+}
+.trend_css{
+    width:500px;
+    height:300px;
+    margin:25px;
+    margin-top:0;
+}
+
+.ad2_css{
+    height:250px;
+    margin-bottom: 30px;
+    
+}
+
+.ft{
+	height:300px;
+	margin-bottom:30px;
+}
+.copyrightm_css{
+	height:50px;
+	border-bottom:2px solid rgba(44,44,44,0.6);
+	border-top:3px solid rgba(0,0,0,0.7);
+	display:flex;
+	justify-content: center;
+}
+.copyright_css{
+    height:250px;
+  
+}
+footer{
+	margin-top:30px;
+}

@@ -1,0 +1,99 @@
+@charset "UTF-8";
+body{
+	color:white;
+}
+.logo{
+	position:relative;
+	margin:0 auto;
+	width:175px;
+	height:33px;
+	right:215px;
+}
+.logo>img{
+	width:30px;
+	height:33px;
+	background-image:url("./logo.png");
+	background-size: cover;
+	float:left;
+}
+.logo>label{
+	width:145px;
+	height:25px;
+	font-size:17px;
+	color:#ccc;
+	font-weight:700;
+	float:left;
+}
+section{
+	width:100%;
+	height:300px;
+	background-color:#161616;
+}
+
+.ulcss{
+	position:relative;
+	margin:0 auto;
+	top:10px;
+	width:600px;
+	height:280px;
+	background-color:rgb(61, 60, 60);
+	border: 1px solid white;
+	
+}
+.ulcss>li{
+	position:relative;
+	left:25px;
+	width:550px;
+	hegith:auto;
+}
+input{
+	width:250px;
+	height:30px;
+}
+input[type=password]{
+	margin-top:10px;
+}
+.ulcss>li:first-child {
+	margin-top:50px;
+	display:flex;
+	justify-content: space-around;
+}
+.ulcss>li:first-child>span{
+	top:50px;
+	background-color: #734F4F;
+	width:150px;
+	height:80px;
+	text-align: center;
+	line-height:80px;
+	font-size:15px;
+	cursor:pointer;
+}
+.login{
+	position:relative;
+	
+}
+.ulcss>li:nth-child(2) {
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	color:#cccccc;
+	font-size:12px;
+	margin-top:10px;
+}
+.ulcss>li:last-child{
+left:50px;
+	width:500px;
+position:relative;
+top:40px;
+height:40px;
+
+display:flex;
+justify-content: space-between;
+
+}
+.ulcss>li:last-child>div{
+	cursor:pointer;
+	color: #ffffff;
+	font-size:12px;
+	
+}

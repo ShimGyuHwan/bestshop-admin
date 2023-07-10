@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc
+		https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+		
+	<!-- 2. web 디렉토리 설정 및 jsp 파일 로드 -->	
+	<annotation-driven/>
+	<resources location="/" mapping="/**"/>
+	<resources location="/admin" mapping="/**"/>
+	<resources location="/admin/css" mapping="/**"/>
+	<resources location="/admin/js" mapping="/**"/>
+	<resources location="/admin/ico" mapping="/**"/>
+	<resources location="/admin/img" mapping="/**"/>
+	
+	<resources location="/" mapping="/**"/>
+	<resources location="/react" mapping="/**"/>
+	<resources location="/react/css" mapping="/**"/>
+	<resources location="/react/js" mapping="/**"/>
+	<resources location="/react/ico" mapping="/**"/>
+	<resources location="/react/img" mapping="/**"/>
+	
+	<resources location="/" mapping="/**"/>
+	<resources location="/mainpage" mapping="/**"/>
+	<resources location="/mainpage/css" mapping="/**"/>
+	<resources location="/mainpage/js" mapping="/**"/>
+	<resources location="/mainpage/ico" mapping="/**"/>
+	<resources location="/mainpage/img" mapping="/**"/>
+	
+	
+	
+	<resources location="/css" mapping="/**"/>
+	<resources location="/js" mapping="/**"/>
+	<resources location="/ico" mapping="/**"/>
+	<resources location="/img" mapping="/**"/>
+	
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/"/>
+		<beans:property name="suffix" value=".jsp"/>
+	</beans:bean>
+	
+	<!-- 관리자 페이지 -->
+	<beans:bean class="portfolio.webpage"></beans:bean>
+	
+	<!-- 쇼핑몰  -->
+	<beans:bean class="portfolio.bestshop"></beans:bean>
+	
+	<!-- 결제시스템 -->
+	<beans:bean class="pay.pay_page"></beans:bean>
+	
+	<!-- 3. 첨부파일 전송 및 저장형태 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="defaultEncoding" value="utf-8"/>
+		<beans:property name="maxUploadSize" value="15000000"/>
+		<beans:property name="maxInMemorySize" value="15000000"/>
+	</beans:bean>
+	
+</beans:beans>

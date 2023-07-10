@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.trend_css>div{
+	
+	width:inherit;
+	height:60px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom:20px;
+}
+.trend_css>div>span{
+	
+	height:60px;
+	line-height: 60px;
+	text-align: center;
+	color:#333;
+}
+.trend_css>div>span:nth-child(1) {
+	font-size:25px;
+	font-weight:700;
+	width:140px;
+}
+.trend_css>div>span:nth-child(2){
+	text-align: left;
+	width:120px;
+	font-size:15px;
+	font-weight:500;
+	cursor:pointer;
+} 
