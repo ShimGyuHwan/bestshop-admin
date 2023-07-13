@@ -14,10 +14,7 @@
 	<!-- SQL 접속정보 -->
 	<context:annotation-config/>
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://umj7-020.cafe24.com/calcifer36?zeroDateTimeBehavior=convertToNull"/>
-		<property name="username" value="calcifer36"/>
-		<property name="password" value="moowoong7!"/>
+
 	</bean>
 	
 	<!-- sqlsessionfactory : mysql 문법 -->
